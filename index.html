@@ -319,5 +319,31 @@
     }
   });
 </script>
+  <div id="qr-egg" style="
+  display: none;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 9999;
+  background: rgba(0,0,0,0.9);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #f8b400;
+">
+  <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://x.com/nopushcoin&size=150x150" alt="QR to Twitter" />
+</div>
+  <script>
+  window.addEventListener('scroll', () => {
+    const qr = document.getElementById('qr-egg');
+    const scrollY = window.scrollY;
+
+    // Если прокрутка вверх (в начало страницы)
+    if (scrollY <= 10) {
+      qr.style.display = 'block';
+    } else {
+      qr.style.display = 'none';
+    }
+  });
+</script>
 </body>
 </html>
