@@ -419,6 +419,68 @@ input:checked + .slider:before {
   toggle.addEventListener('change', () => {
     status.textContent = toggle.checked ? 'ON' : 'OFF';
   });
+    <script>
+  const ghostMessages = [
+    "👤 walletx213 just whispered about $NOPUSH...",
+  "👤 anon007 entered silently 👀",
+  "👤 degen999 said nothing… but bought anyway.",
+  "👤 ghost.sol liked the vibes.",
+  "👤 Someone just bought. Maybe.",
+  "👤 You didn’t hear this from me...",
+  "👤 $NOPUSH doesn’t advertise. It appears.",
+  "👤 rughunter69 is watching closely...",
+  "👤 🐸 pepe_in_disguise is accumulating silently.",
+  "👤 zeroPush.eth just blinked.",
+  "👤 liquidityghost activated stealth mode.",
+  "👤 nopromo420 just joined the experiment.",
+  "👤 degenX faded in, said 'vibes only'.",
+  "👤 noone.sol appeared. And vanished.",
+  "👤 don’t look behind you... someone just bought.",
+  "👤 0xdead just nodded quietly.",
+  "👤 walletzzz… still awake for $NOPUSH.",
+  "👤 just another ghost on the chain 👻",
+  "👤 shadowmint hit refresh. Then smiled.",
+  "👤 unknown signal detected near $NOPUSH."
+  ];
+
+  const ghostAlert = document.getElementById('ghost-alert');
+
+  function showGhostMessage() {
+    const msg = ghostMessages[Math.floor(Math.random() * ghostMessages.length)];
+    ghostAlert.innerText = msg;
+    ghostAlert.style.display = 'block';
+    ghostAlert.style.opacity = '1';
+
+    setTimeout(() => {
+      ghostAlert.style.opacity = '0';
+    }, 4000);
+
+    setTimeout(() => {
+      ghostAlert.style.display = 'none';
+    }, 4500);
+
+    const next = Math.floor(Math.random() * 20000) + 25000; // от 25 до 45 сек
+    setTimeout(showGhostMessage, next);
+  }
+
+  setTimeout(showGhostMessage, 10000); // первая "активность" через 10 сек
 </script>
+</script>
+  <div id="ghost-alert" style="
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.85);
+  color: #f8b400;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: 'Rubik', sans-serif;
+  z-index: 9999;
+  box-shadow: 0 0 12px rgba(0,0,0,0.5);
+  transition: opacity 0.5s ease;
+">
+</div>
 </body>
 </html>
