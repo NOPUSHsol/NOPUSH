@@ -380,13 +380,32 @@ input:checked + .slider:before {
 ">
   <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://x.com/nopushcoin&size=150x150" alt="QR to Twitter" />
 </div>
-  <script>
-  window.addEventListener('scroll', () => {
-    const qr = document.getElementById('qr-egg');
-    const scrollY = window.scrollY;
+<script>
+  const qr = document.getElementById('qr-egg');
+  let lastScrollY = window.scrollY;
 
-    // Если прокрутка вверх (в начало страницы)
-    if (scrollY <= 10) {
+  window.addEventListener('wheel', (e) => {
+    const scrollTop = window.scrollY;
+    
+    if (scrollTop <= 0 && e.deltaY < 0) {
+      qr.style.display = 'block';
+    } else {
+      qr.style.display = 'none';
+    }
+
+    lastScrollY = scrollTop;
+  });
+
+  let touchStartY = 0;
+  window.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+  });
+
+  window.addEventListener('touchmove', (e) => {
+    const currentY = e.touches[0].clientY;
+    const scrollTop = window.scrollY;
+
+    if (scrollTop <= 0 && currentY - touchStartY > 30) {
       qr.style.display = 'block';
     } else {
       qr.style.display = 'none';
