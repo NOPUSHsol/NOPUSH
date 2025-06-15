@@ -340,6 +340,21 @@ input:checked + .slider:before {
   <footer>
     &copy; 2025 $NOPUSH — Created by no one. Controlled by everyone.
   </footer>
+  <div id="ghost-alert" style="
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.85);
+  color: #f8b400;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: 'Rubik', sans-serif;
+  z-index: 9999;
+  box-shadow: 0 0 12px rgba(0,0,0,0.5);
+  transition: opacity 0.5s ease;
+"></div>
   <script>
   const logo = document.querySelector('.hero-image img');
 
@@ -458,20 +473,5 @@ input:checked + .slider:before {
 
   setTimeout(showGhostMessage, 10000);
 </script>
-<div id="ghost-alert" style="
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(0,0,0,0.85);
-  color: #f8b400;
-  padding: 10px 16px;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  font-family: 'Rubik', sans-serif;
-  z-index: 9999;
-  box-shadow: 0 0 12px rgba(0,0,0,0.5);
-  transition: opacity 0.5s ease;
-"></div>
 </body>
 </html>
