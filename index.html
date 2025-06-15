@@ -411,36 +411,28 @@ input:checked + .slider:before {
       qr.style.display = 'none';
     }
   });
-</script>
-  <script>
-  const toggle = document.getElementById('toggleSwitch');
-  const status = document.getElementById('push-status');
-
-  toggle.addEventListener('change', () => {
-    status.textContent = toggle.checked ? 'ON' : 'OFF';
-  });
-  
+<script>
   const ghostMessages = [
     "👤 walletx213 just whispered about $NOPUSH...",
-  "👤 anon007 entered silently 👀",
-  "👤 degen999 said nothing… but bought anyway.",
-  "👤 ghost.sol liked the vibes.",
-  "👤 Someone just bought. Maybe.",
-  "👤 You didn’t hear this from me...",
-  "👤 $NOPUSH doesn’t advertise. It appears.",
-  "👤 rughunter69 is watching closely...",
-  "👤 🐸 pepe_in_disguise is accumulating silently.",
-  "👤 zeroPush.eth just blinked.",
-  "👤 liquidityghost activated stealth mode.",
-  "👤 nopromo420 just joined the experiment.",
-  "👤 degenX faded in, said 'vibes only'.",
-  "👤 noone.sol appeared. And vanished.",
-  "👤 don’t look behind you... someone just bought.",
-  "👤 0xdead just nodded quietly.",
-  "👤 walletzzz… still awake for $NOPUSH.",
-  "👤 just another ghost on the chain 👻",
-  "👤 shadowmint hit refresh. Then smiled.",
-  "👤 unknown signal detected near $NOPUSH."
+    "👤 anon007 entered silently 👀",
+    "👤 degen999 said nothing… but bought anyway.",
+    "👤 ghost.sol liked the vibes.",
+    "👤 Someone just bought. Maybe.",
+    "👤 You didn’t hear this from me...",
+    "👤 $NOPUSH doesn’t advertise. It appears.",
+    "👤 rughunter69 is watching closely...",
+    "👤 🐸 pepe_in_disguise is accumulating silently.",
+    "👤 zeroPush.eth just blinked.",
+    "👤 liquidityghost activated stealth mode.",
+    "👤 nopromo420 just joined the experiment.",
+    "👤 degenX faded in, said 'vibes only'.",
+    "👤 noone.sol appeared. And vanished.",
+    "👤 don’t look behind you... someone just bought.",
+    "👤 0xdead just nodded quietly.",
+    "👤 walletzzz… still awake for $NOPUSH.",
+    "👤 just another ghost on the chain 👻",
+    "👤 shadowmint hit refresh. Then smiled.",
+    "👤 unknown signal detected near $NOPUSH."
   ];
 
   const ghostAlert = document.getElementById('ghost-alert');
@@ -459,13 +451,13 @@ input:checked + .slider:before {
       ghostAlert.style.display = 'none';
     }, 4500);
 
-    const next = Math.floor(Math.random() * 20000) + 25000; // от 25 до 45 сек
+    const next = Math.floor(Math.random() * 20000) + 25000;
     setTimeout(showGhostMessage, next);
   }
 
-  setTimeout(showGhostMessage, 10000); // первая "активность" через 10 сек
+  setTimeout(showGhostMessage, 10000);
 </script>
-  <div id="ghost-alert" style="
+<div id="ghost-alert" style="
   display: none;
   position: fixed;
   bottom: 20px;
@@ -479,7 +471,6 @@ input:checked + .slider:before {
   z-index: 9999;
   box-shadow: 0 0 12px rgba(0,0,0,0.5);
   transition: opacity 0.5s ease;
-">
-</div>
+"></div>
 </body>
 </html>
