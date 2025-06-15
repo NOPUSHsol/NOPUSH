@@ -20,6 +20,19 @@
       text-align: center;
       border-bottom: 1px solid #222;
     }
+    <div style="position: absolute; top: 20px; left: 20px;">
+  <button onclick="copyWallet()" style="
+    background: transparent;
+    border: 2px solid #f8b400;
+    color: #f8b400;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  ">Support</button>
+</div>
     header h1 {
       margin: 0;
       font-size: 3.5rem;
@@ -472,6 +485,14 @@ input:checked + .slider:before {
   }
 
   setTimeout(showGhostMessage, 10000);
+</script>
+  <script>
+  function copyWallet() {
+    const wallet = "7Zi6AqDr4j8EmWi3pn7rY627W1fZAhfh5MLgUEsuEtre";
+    navigator.clipboard.writeText(wallet).then(() => {
+      alert("Wallet address copied!");
+    });
+  }
 </script>
 </body>
 </html>
