@@ -213,7 +213,22 @@ input:checked + .slider:before {
   </label>
   <span id="push-status" style="margin-left: 10px; color: #f8b400;">OFF</span>
 </div>
-    <div style="position: absolute; top: 20px; left: 20px; z-index: 999;">
+    <div id="copy-toast" style="
+  display: none;
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  background: rgba(0,0,0,0.8);
+  color: #f8b400;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: 'Rubik', sans-serif;
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transition: opacity 0.4s ease;
+">Copied!</div>
+    <div style="position: fixed; top: 20px; left: 20px; z-index: 999;">
   <button onclick="copyWallet()" style="
     background: transparent;
     border: 2px solid #f8b400;
@@ -488,10 +503,20 @@ input:checked + .slider:before {
 </script>
   <script>
   function copyWallet() {
-    const wallet = "7Zi6AqDr4j8EmWi3pn7rY627W1fZAhfh5MLgUEsuEtre";
-    navigator.clipboard.writeText(wallet).then(() => {
-      alert("Wallet address copied!");
-    });
+  const wallet = "7Zi6AqDr4j8EmWi3pn7rY627W1fZAhfh5MLgUEsuEtre";
+  navigator.clipboard.writeText(wallet).then(() => {
+    const toast = document.getElementById('copy-toast');
+    toast.style.display = 'block';
+    toast.style.opacity = '1';
+
+    setTimeout(() => {
+      toast.style.opacity = '0';
+    }, 2000);
+
+    setTimeout(() => {
+      toast.style.display = 'none';
+    }, 2500);
+  });
   }
 </script>
 </body>
